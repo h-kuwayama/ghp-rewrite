@@ -10,11 +10,24 @@
 <link rel="stylesheet" href="">
 <link rel="shortcut icon" href="">
 <script>
+  
+  /*
+   * Redirect File Name
+   * -------------------
+   * [Note]:
+   * without operator (.html)
+   * -------------------------
+   */
+  var redirect_file_name = 'post';
+  
+  var match_condition = new RegExp('\/' + redirect_file_name + '\/[a-z0-9\-\_]+$');
   var path_name = window.location.pathname;
   var query_string = window.location.search;
   
-  // Redirect to post
-  if (permalink = path_name.match(/post\/[a-z0-9\-\_]+$/))
+  /*
+   * Redirect
+   */
+  if (permalink = path_name.match(match_condition))
   {
     console.log(path_name.replace(permalink, '') + 'post.html?id=' + permalink[0].replace(/post\//, ''));
     location.href = path_name.replace(permalink, '') + 'post.html?id=' + permalink[0].replace(/post\//, '');
