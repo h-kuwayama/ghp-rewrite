@@ -14,9 +14,10 @@
   var parameter_key = 'post_id';
   
   var match_condition = new RegExp(parameter_key + '\=[a-z0-9\-\_]+$');
-  var path_name = location.pathname;
+  var path_name = window.location.pathname;
   
   var base_dir = path_name.split(file_name)[0];
+  console.log(base_dir);
   if (parameter = path_name.match(match_condition))
   {
     console.log(base_dir + parameter.split('=')[0]);
