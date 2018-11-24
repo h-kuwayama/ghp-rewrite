@@ -13,7 +13,7 @@
   var path_name = window.location.pathname;
   var query_string = window.location.search;
   // Redirect to post
-  if (permalink = path_name.match(/post[a-z0-9\-\_]+$/))
+  if (permalink = path_name.match(/post\/[a-z0-9\-\_]+$/))
   {
     console.log(permalink);
   }
