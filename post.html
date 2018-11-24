@@ -21,8 +21,8 @@
  
   if (parameter = query_string.match(match_condition))
   {
-    console.log(parameter[0].split('=')[0]);
-    history.pushState(null, null, base_dir + parameter[0].split('=')[0]);
+    console.log(parameter[0].split('=')[1]);
+    history.pushState(null, null, base_dir + file_name.replace('.html', '/') + parameter[0].split('=')[1]);
   }
   
 </script>
