@@ -15,7 +15,8 @@
   // Redirect to post
   if (permalink = path_name.match(/post\/[a-z0-9\-\_]+$/))
   {
-    console.log(permalink);
+    redirect_uri = permalink[0].replace(/post\//, '');
+    console.log(redirect_uri);
   }
 </script>
 </head>
