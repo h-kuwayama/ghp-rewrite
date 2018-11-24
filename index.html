@@ -9,20 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="">
 <link rel="shortcut icon" href="">
-<script>
-(function (l) {
-    if (l.search) {
-        var q = {};
-        l.search.slice(1).split('&').forEach(function (v) { // ?p=/fooの分解
-            var a = v.split('='); // 'p=/foo' となっているはずなので=で分割
-            q[a[0]] = a[1]; // {p: '/foo'} 形式に修正
-        });
-        if (q.p !== undefined) {
-            window.history.replaceState(null, null, l.pathname.slice(0, -1) + (q.p || '')); // https://hoge.com/fooへ遷移
-        }
-    }
-}(window.location))
-</script>
 </head>
 <body>
   <h1>Github Pages Redirect Test</h1>
@@ -35,6 +21,7 @@
 	</ul>
 	<h3>固定ページ</3>
 	<ul>
+		<li><a href="/">TOP</li>
 		<li><a href="pricing">Pricing</a></li>
 		<li><a href="contact">Contact</a></li>
 	</ul>
