@@ -2,33 +2,57 @@
 <html>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Pricing | Github Pages Redirect</title>
+<title>Post | Github Pages Rewrite</title>
 <meta charset="utf-8">
 <meta name="description" content="">
-<meta name="author" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="">
-<link rel="shortcut icon" href="">
+<link rel="stylesheet" href="style.css">
 <script>
+
+  /*
+   * User Config
+   * ------------
+   * [Note]:
+   * file_name is this file name
+   * parameter_key is expected parameter key of query string
+   * --------------------------------------------------------
+   */
   var file_name = 'post.html';
   var parameter_key = 'post_id';
-  
+
+
+  /*
+   * Process
+   */
   var match_condition = new RegExp(parameter_key + '\=[a-z0-9\-\_]+$');
   var path_name = window.location.pathname;
   var query_string = window.location.search;
-  
   var base_dir = path_name.split(file_name)[0];
- 
+  var parameter_value = null;
   if (parameter = query_string.match(match_condition))
   {
-    console.log(parameter[0].split('=')[1]);
-    history.replaceState(null, null, base_dir + file_name.replace('.html', '/') + parameter[0].split('=')[1]);
+    parameter_value = parameter[0].split('=')[1];
+    history.replaceState(null, null, base_dir + file_name.replace('.html', '/') + parameter_value);
   }
-  
+
 </script>
 </head>
 <body>
-  <h1>POST</h1>
-  <p>This is single post page.</p>
+  <h1>Github Pages Rewrite</h1>
+	<ol>
+    <li class="linked"><a href="">Top</a><li>
+    <li><script>document.write(parameter_value);</script></li>
+  </ol>
+  <h3>パーマリンク</h3>
+  <p>HistoryAPI の replaceState を利用してパーマリンクを生成しています。<br>
+    /post.html?post_id=<script>document.write(parameter_value);</script> → /post/<script>document.write(parameter_value);</script>
+  </p>
+  <h3>固定ページ</h3>
+  <p>拡張子なしでの遷移</p>
+	<ul>
+		<li><a href="/">TOP</li>
+		<li><a href="pricing">Pricing</a></li>
+		<li><a href="contact">Contact</a></li>
+	</ul>
 </body>
 </html>

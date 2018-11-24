@@ -2,24 +2,27 @@
 <html>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Github Pages Redirect</title>
+<title>Github Pages Rewrite</title>
 <meta charset="utf-8">
 <meta name="description" content="">
-<meta name="author" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="">
-<link rel="shortcut icon" href="">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Github Pages Redirect Test</h1>
-	<p>Github Pages で パーマリンクの rewrite を実現します</p>
-	<h3>エントリー</h3>
+  <h1>Github Pages Rewrite</h1>
+  <ol>
+    <li>TOP<li>
+  </ol>
+	<p>Github Pages でパーマリンク（整形済みURL）を有効にします。redirect + historyAPI を使って Apache の mod_rewrite などと同様の動きを実現します。</p>
+  <h3>エントリー</h3>
+  <p>パーマリンクによる遷移</p>
 	<ul>
 		<li><a href="post/hellow-world">Hello, World!</a></li>
 		<li><a href="post/you-can-rewrite">You can rewrite!</a></li>
 		<li><a href="post/23">post_id=23のポスト</a></li>
 	</ul>
-	<h3>固定ページ</3>
+	<h3>固定ページ</h3>
+  <p>拡張子なしでの遷移</p>
 	<ul>
 		<li><a href="/">TOP</li>
 		<li><a href="pricing">Pricing</a></li>
