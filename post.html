@@ -17,7 +17,7 @@
   var path_name = location.pathname;
   
   var base_dir = path_name.split(file_name)[0];
-  if (parameter = path_name.match(match_condition)
+  if (parameter = path_name.match(match_condition))
   {
     console.log(base_dir + parameter.split('=')[0]);
     history.pushState(null, null, base_dir + parameter.split('=')[0];
