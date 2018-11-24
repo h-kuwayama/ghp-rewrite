@@ -10,10 +10,13 @@
 <link rel="stylesheet" href="">
 <link rel="shortcut icon" href="">
 <script>
-  var path = window.location.pathname;
-  var qs = window.location.search;
-  console.log(path);
-  console.log(qs);
+  var path_name = window.location.pathname;
+  var query_string = window.location.search;
+  // Redirect to post
+  if (permalink = path_name.match(/post[a-z0-9\-\_]+$/))
+  {
+    console.log(permalink);
+  }
 </script>
 </head>
 <body>
