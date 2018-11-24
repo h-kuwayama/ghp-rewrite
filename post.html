@@ -28,7 +28,7 @@
    * Process
    * (Rewrite URL using historyAPI)
    */
-  var match_condition = new RegExp(parameter_key + '\=[a-z0-9\-\_]+$');
+  var match_condition = new RegExp(parameter_key + '=[a-z0-9-_]+$');
   if (parameter = query_string.match(match_condition))
   {
     parameter_value = parameter[0].split('=')[1];
@@ -43,7 +43,7 @@
   <h2><script>document.write(parameter_value);</script></h2>
   <nav>
     <ul>
-      <li><a href="/ghp-rewrite">TOP</li>
+      <li><a href="/ghp-rewrite">TOP</a></li>
   		<li><a href="/ghp-rewrite/about">About</a></li>
   		<li><a href="/ghp-rewrite/contact">Contact</a></li>
   	</ul>
@@ -59,7 +59,7 @@
   <h3>エントリー</h3>
   <p>パーマリンクによる遷移</p>
 	<ul>
-		<li><a href="/ghp-rewrite/post/hellow-world">Hello, World!</a></li>
+		<li><a href="/ghp-rewrite/post/hello-world">Hello, World!</a></li>
 		<li><a href="/ghp-rewrite/post/you-can-rewrite">You can rewrite!</a></li>
 		<li><a href="/ghp-rewrite/post/23">23</a></li>
 	</ul>
