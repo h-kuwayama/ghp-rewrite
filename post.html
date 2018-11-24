@@ -13,7 +13,7 @@
   var file_name = 'post.html';
   var parameter_key = 'post_id';
   
-  var match_condition = new RegExp(parameter_key + '=[a-z0-9\-\_]+$');
+  var match_condition = new RegExp(parameter_key + '\=[a-z0-9\-\_]+$');
   var path_name = location.pathname;
   
   var base_dir = path_name.split(file_name)[0];
