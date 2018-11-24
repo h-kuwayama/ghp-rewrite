@@ -10,18 +10,19 @@
 <link rel="stylesheet" href="">
 <link rel="shortcut icon" href="">
 <script>
-  (function (l) {
-    if (l.search) {
-        var q = {};
-        l.search.slice(1).split('&').forEach(function (v) { // ?p=/fooの分解
-            var a = v.split('='); // 'p=/foo' となっているはずなので=で分割
-            q[a[0]] = a[1]; // {p: '/foo'} 形式に修正
-        });
-        if (q.p !== undefined) {
-            window.history.replaceState(null, null, l.pathname.slice(0, -1) + (q.p || '')); // https://hoge.com/fooへ遷移
-        }
-    }
-}(window.location))
+  var file_name = 'post.html';
+  var parameter_key = 'post_id';
+  
+  var match_condition = new RegExp(parameter_key + '=[a-z0-9\-\_]+$');
+  var path_name = location.pathname;
+  
+  var base_dir = path_name.split(file_name)[0];
+  if (parameter = path_name.match(match_condition)
+  {
+    console.log(base_dir + parameter.split('=')[0]);
+    history.pushState(null, null, base_dir + parameter.split('=')[0];
+  }
+  
 </script>
 </head>
 <body>
