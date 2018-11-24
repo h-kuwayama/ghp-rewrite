@@ -12,11 +12,11 @@
 <script>
   var path_name = window.location.pathname;
   var query_string = window.location.search;
+  
   // Redirect to post
   if (permalink = path_name.match(/post\/[a-z0-9\-\_]+$/))
   {
-    redirect_uri = permalink[0].replace(/post\//, '');
-    console.log(redirect_uri);
+    location.href = 'post.html?id=' + permalink[0].replace(/post\//, '');
   }
 </script>
 </head>
