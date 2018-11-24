@@ -12,24 +12,24 @@
   /*
    * Config
    */
-  var redirect_file_name = 'post';
+  var redirect_file_name = 'post.html';
+  var parameter_key = 'post_id';
 
 
   /*
    * Env
    */
   var path_name = window.location.pathname;
-  var query_string = window.location.search;
 
 
   /*
    * Process
    * (Redirect)
    */
-  var match_condition = new RegExp(redirect_file_name + '\/[a-z0-9\-\_]+$');
+  var match_condition = new RegExp(redirect_file_name.replace('.html', '') + '/[a-z0-9-_]+$');
   if (permalink = path_name.match(match_condition))
   {
-    location.href = path_name.replace(permalink, '') + 'post.html?post_id=' + permalink[0].replace(/post\//, '');
+    location.href = path_name.replace(permalink, '') + redirect_file_name + '?' + parameter_key + '=' + permalink[0].replace(/post\//, '');
   }
 
 </script>
