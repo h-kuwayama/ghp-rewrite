@@ -7,29 +7,28 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
-<scrip src="config.js"></script>
 <script>
 
   /*
-   * User Config
-   * ------------
-   * [Note]:
-   * file_name is this file name
-   * parameter_key is expected parameter key of query string
-   * --------------------------------------------------------
+   * Config
    */
   var file_name = 'post.html';
   var parameter_key = 'post_id';
 
 
   /*
+   * Env
+   */
+   var path_name = window.location.pathname;
+   var query_string = window.location.search;
+   var base_dir = path_name.split(file_name)[0];
+
+
+  /*
    * Process
+   * (Rewrite URL using historyAPI)
    */
   var match_condition = new RegExp(parameter_key + '\=[a-z0-9\-\_]+$');
-  var path_name = window.location.pathname;
-  var query_string = window.location.search;
-  var base_dir = path_name.split(file_name)[0];
-  var parameter_value = null;
   if (parameter = query_string.match(match_condition))
   {
     parameter_value = parameter[0].split('=')[1];
@@ -41,6 +40,13 @@
 <body>
   <h1>Github Pages Rewrite</h1>
   <h2><script>document.write(parameter_value);</script></h2>
+  <nav>
+    <ul>
+      <li><a href="/redirect_test">TOP</li>
+  		<li><a href="/redirect_test/about">About</a></li>
+  		<li><a href="/redirect_test/contact">Contact</a></li>
+  	</ul>
+  </nav>
 	<ol>
     <li class="linked"><a href="/redirect_test">Top</a><li>
     <li><script>document.write(parameter_value);</script></li>
@@ -49,12 +55,12 @@
   <p>HistoryAPI の replaceState を利用してパーマリンクを生成しています。<br>
     /post.html?post_id=<script>document.write(parameter_value);</script> → /post/<script>document.write(parameter_value);</script>
   </p>
-  <h3>固定ページ</h3>
-  <p>拡張子なしでの遷移</p>
+  <h3>エントリー</h3>
+  <p>パーマリンクによる遷移</p>
 	<ul>
-    <li><a href="/redirect_test">TOP</li>
-    <li><a href="/redirect_test/about">About</a></li>
-    <li><a href="/redirect_test/contact">Contact</a></li>
+		<li><a href="post/hellow-world">Hello, World!</a></li>
+		<li><a href="post/you-can-rewrite">You can rewrite!</a></li>
+		<li><a href="post/23">23</a></li>
 	</ul>
 </body>
 </html>

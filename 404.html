@@ -10,26 +10,28 @@
 <script>
 
   /*
-   * Redirect File Name
-   * -------------------
-   * [Note]:
-   * without operator (.html)
-   * -------------------------
+   * Config
    */
   var redirect_file_name = 'post';
 
-  var match_condition = new RegExp(redirect_file_name + '\/[a-z0-9\-\_]+$');
+
+  /*
+   * Env
+   */
   var path_name = window.location.pathname;
   var query_string = window.location.search;
 
+
   /*
-   * Redirect
+   * Process
+   * (Redirect)
    */
+  var match_condition = new RegExp(redirect_file_name + '\/[a-z0-9\-\_]+$');
   if (permalink = path_name.match(match_condition))
   {
-    console.log(path_name.replace(permalink, '') + 'post.html?post_id=' + permalink[0].replace(/post\//, ''));
     location.href = path_name.replace(permalink, '') + 'post.html?post_id=' + permalink[0].replace(/post\//, '');
   }
+
 </script>
 </head>
 <body>
