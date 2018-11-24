@@ -15,10 +15,11 @@
   
   var match_condition = new RegExp(parameter_key + '\=[a-z0-9\-\_]+$');
   var path_name = window.location.pathname;
+  var query_string = window.location.search;
   
   var base_dir = path_name.split(file_name)[0];
-  console.log(base_dir);
-  if (parameter = path_name.match(match_condition))
+ 
+  if (parameter = query_string.match(match_condition))
   {
     console.log(base_dir + parameter.split('=')[0]);
     history.pushState(null, null, base_dir + parameter.split('=')[0]);
