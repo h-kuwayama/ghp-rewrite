@@ -23,9 +23,6 @@ ol li {
 ol li a {
   text-decoration: underline;
 }
-.linked::after {
-  content: " >";
-}
 ul {
   margin-bottom: 4em;
 }
@@ -39,4 +36,14 @@ nav ul {
 nav ul li {
   display: inline-block;
   margin: 0 4em;
+}
+
+.linked::after {
+  content: " >";
+}
+.howto {
+  list-style: decimal;
+}
+.howto li {
+  margin-bottom: 1em;
 }

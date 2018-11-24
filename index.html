@@ -4,7 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Github Pages Rewrite</title>
 <meta charset="utf-8">
-<meta name="description" content="">
+<meta name="description" content="Github Pages で Apache（.htaccess）の mod_rewrite と同等の機能を実装し、パーマリンク（整形された動的URL）での遷移を実現する。">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -21,7 +21,13 @@
   <ol>
     <li>TOP<li>
   </ol>
-	<p>Github Pages でパーマリンク（整形済みURL）を有効にします。redirect + historyAPI を使って Apache の mod_rewrite などと同様の動きを実現します。</p>
+	<p>Github Pages でパーマリンク（整形された動的URL）を有効にします。404ページと historyAPI を利用して、Apache（.htaccess）の mod_rewrite や nginx の rewrite などと同等の動きを実現します。</p>
+  <h3>仕組み</h3>
+  <ul class="howto">
+    <li>パーマリンクによる無効なURLを一旦 404.html で受ける（Github Pages のデフォルトの仕様）。</li>
+    <li>404.html に仕込んだ javascript で、クエリストリング付きの有効なURLに変換して目的のページにリダイレクト。</li>
+    <li>リダイレクトされた目的のページで historyAPI の replaceState を使って、URLを最初にリクエストされたパーマリンクに変換</li>
+  </ul>
   <h3>エントリー</h3>
   <p>パーマリンクによる遷移</p>
 	<ul>
