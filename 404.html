@@ -29,8 +29,8 @@
    */
   if (permalink = path_name.match(match_condition))
   {
-    console.log(path_name.replace(permalink, '') + 'post.html?id=' + permalink[0].replace(/post\//, ''));
-    location.href = path_name.replace(permalink, '') + 'post.html?id=' + permalink[0].replace(/post\//, '');
+    console.log(path_name.replace(permalink, '') + 'post.html?post_id=' + permalink[0].replace(/post\//, ''));
+    location.href = path_name.replace(permalink, '') + 'post.html?post_id=' + permalink[0].replace(/post\//, '');
   }
 </script>
 </head>
