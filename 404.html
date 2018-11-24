@@ -16,7 +16,8 @@
   // Redirect to post
   if (permalink = path_name.match(/post\/[a-z0-9\-\_]+$/))
   {
-    location.href = 'post.html?id=' + permalink[0].replace(/post\//, '');
+    console.log(permalink);
+    //location.href = 'post.html?id=' + permalink[0].replace(/post\//, '');
   }
 </script>
 </head>
