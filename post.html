@@ -21,7 +21,7 @@
  
   if (parameter = query_string.match(match_condition))
   {
-    console.log(String.parameter.split('='));
+    console.log(parameter.slice(parameter.indexOf('=') + 1));
     history.pushState(null, null, base_dir + parameter.split('=')[0]);
   }
   
